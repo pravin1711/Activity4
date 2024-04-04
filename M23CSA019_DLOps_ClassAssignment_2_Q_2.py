@@ -38,7 +38,7 @@ train_loader = torch.utils.data.DataLoader(train_set, batch_size=32, shuffle=Tru
 test_loader = torch.utils.data.DataLoader(test_set, batch_size=32, shuffle=False)
 
 # Configuration-specific model modifications
-def modify_mode(config_name, model_config):
+def modify_model(config_name, model_config):
     model = model_config['model'](pretrained=True)
     for param in model.parameters():
         param.requires_grad = False
